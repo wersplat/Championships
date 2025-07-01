@@ -3,93 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Road to $25K Player Draft Registration</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 2rem;
-    }
-    .container {
-      background: #fff;
-      padding: 2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #B6094B;
-    }
-    label {
-      display: block;
-      margin: 1rem 0 0.25rem;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      margin-top: 1.5rem;
-      background: #B6094B;
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      width: 100%;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #99073f;
-    }
-  </style>
+  <title>🎮 Player Draft Registration</title>
+  <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
   <div class="container">
-    <h1>Road to $25K Player Registration</h1>
-    <form id="regForm">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="discord">Discord Handle</label>
-      <input type="text" id="discord" name="discord" placeholder="@example" required>
-
-      <label for="gamertag">Gamertag</label>
-      <input type="text" id="gamertag" name="gamertag" required>
-
-      <label for="position">Preferred Position(s)</label>
-      <input type="text" id="position" name="position" placeholder="PG, SG, SF...">
-
-      <label for="history">Past Teams or Events</label>
-      <textarea id="history" name="history" rows="3"></textarea>
-
-      <label for="social">Social Media Link (optional)</label>
-      <input type="url" id="social" name="social">
-
-      <label>
-        <input type="checkbox" name="agreement" required>
-        I agree to be locked to the team that drafts me and will not join other rosters.
-      </label>
-
-      <button type="submit">Submit Registration</button>
-    </form>
+    <h1>🎮 Player Draft Registration</h1>
+    <p>Register to be eligible for the Road to $25K Championships player draft. Selected players will be drafted by team captains on July 18th.</p>
+    
+    <div class="form-container">
+      <form id="playerForm">
+        <div class="section">
+          <h2>Personal Information</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" class="form-control" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="gamertag">Gamertag</label>
+            <input type="text" id="gamertag" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="discord">Discord Username</label>
+            <input type="text" id="discord" class="form-control" required>
+            <p class="form-note">Example: username#1234</p>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Game Information</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="position">Primary Position</label>
+              <select id="position" class="form-control" required>
+                <option value="">Select position</option>
+                <option value="PG">Point Guard (PG)</option>
+                <option value="SG">Shooting Guard (SG)</option>
+                <option value="SF">Small Forward (SF)</option>
+                <option value="PF">Power Forward (PF)</option>
+                <option value="C">Center (C)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="secondaryPosition">Secondary Position</label>
+              <select id="secondaryPosition" class="form-control">
+                <option value="">Select position</option>
+                <option value="PG">Point Guard (PG)</option>
+                <option value="SG">Shooting Guard (SG)</option>
+                <option value="SF">Small Forward (SF)</option>
+                <option value="PF">Power Forward (PF)</option>
+                <option value="C">Center (C)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="playstyle">Play Style</label>
+            <select id="playstyle" class="form-control" required>
+              <option value="">Select play style</option>
+              <option value="Scorer">Scorer</option>
+              <option value="Playmaker">Playmaker</option>
+              <option value="Defender">Defender</option>
+              <option value="Rebounder">Rebounder</option>
+              <option value="3PT Specialist">3PT Specialist</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="experience">Years of Competitive Experience</label>
+            <input type="number" id="experience" class="form-control" min="0" required>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Availability</h2>
+          <p>Please check all times you are available during the tournament weekend (July 25-27, 2025):</p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+            <div>
+              <input type="checkbox" id="friEve" name="availability" value="Friday Evening" class="form-control">
+              <label for="friEve">Friday Evening</label>
+            </div>
+            <div>
+              <input type="checkbox" id="satMorning" name="availability" value="Saturday Morning" class="form-control">
+              <label for="satMorning">Saturday Morning</label>
+            </div>
+            <div>
+              <input type="checkbox" id="satAfternoon" name="availability" value="Saturday Afternoon" class="form-control">
+              <label for="satAfternoon">Saturday Afternoon</label>
+            </div>
+            <div>
+              <input type="checkbox" id="satEvening" name="availability" value="Saturday Evening" class="form-control">
+              <label for="satEvening">Saturday Evening</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sunMorning" name="availability" value="Sunday Morning" class="form-control">
+              <label for="sunMorning">Sunday Morning</label>
+            </div>
+            <div>
+              <input type="checkbox" id="sunAfternoon" name="availability" value="Sunday Afternoon" class="form-control">
+              <label for="sunAfternoon">Sunday Afternoon</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="bio">Player Bio (optional)</label>
+            <textarea id="bio" class="form-control" rows="4" placeholder="Tell us about yourself, your play style, and why you'd be a great addition to a team."></textarea>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="agreeTerms" required>
+            I agree to the <a href="../Rules & Agreements/rulesAgreement.html" target="_blank">tournament rules and player agreement</a>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-submit">Submit Registration</button>
+      </form>
+    </div>
+    
+    <div class="nav-container">
+      <a href="../index.html" class="btn">← Back to Home</a>
+    </div>
   </div>
 
   <script>
-    document.getElementById("regForm").addEventListener("submit", function(e) {
+    document.getElementById("playerForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const data = {
-        name: document.getElementById("name").value,
-        discord: document.getElementById("discord").value,
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
         gamertag: document.getElementById("gamertag").value,
+        discord: document.getElementById("discord").value,
+        email: document.getElementById("email").value,
         position: document.getElementById("position").value,
-        history: document.getElementById("history").value,
-        social: document.getElementById("social").value
+        secondaryPosition: document.getElementById("secondaryPosition").value,
+        playstyle: document.getElementById("playstyle").value,
+        experience: document.getElementById("experience").value,
+        availability: Array.from(document.getElementsByName("availability")).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value),
+        bio: document.getElementById("bio").value,
+        history: document.getElementById("history")?.value || "",
+        social: document.getElementById("social")?.value || ""
       };
 
       fetch("https://script.google.com/macros/s/AKfycbySLYhaxM58Ebam-5RjEpqU3p2rb_L_HVzcH0PxYKDshbO1el9TVbGykiogJq1VlQHafA/exec", {
