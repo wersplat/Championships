@@ -47,35 +47,51 @@ p, ul, ol, li {
 }
 
 .nav-container a {
-  color: #FF2457;
+  color: #FF6B8B;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
 .nav-container a:hover {
-  color: #ffffff;
-  text-decoration: underline;
+  color: #FFFFFF;
+  background-color: rgba(255, 36, 87, 0.2);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
   background-color: #FF2457;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  background-color: #d61d4a;
-  color: white;
+  background-color: #FF3D6F;
+  color: #FFFFFF;
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Forms */
