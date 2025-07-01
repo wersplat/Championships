@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road to $25K Draft Captain Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #B6094B;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 1.5rem;
+      background: #B6094B;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #99073f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Road to $25K Draft Captain Registration</h1>
+    <form id="captainForm">
+      <label for="name">Captain Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="discord">Discord Handle</label>
+      <input type="text" id="discord" name="discord" placeholder="@example" required>
+
+      <label for="gamertag">Gamertag</label>
+      <input type="text" id="gamertag" name="gamertag" required>
+
+      <label for="playstatus">Will you be playing or just managing?</label>
+      <select id="playstatus" name="playstatus">
+        <option value="Playing Captain">Playing Captain</option>
+        <option value="Non-Playing Manager">Non-Playing Manager</option>
+      </select>
+
+      <label for="teamname">Preferred Team Name</label>
+      <input type="text" id="teamname" name="teamname" required>
+
+      <label for="logo">Team Logo URL</label>
+      <input type="url" id="logo" name="logo" required>
+
+      <label for="social">Social Media</label>
+      <input type="url" id="social" name="social">
+
+      <label for="availability">Are you available for the live Draft on July 18?</label>
+      <select id="availability" name="availability" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label>
+        <input type="checkbox" name="agreement" required>
+        I agree to draft a full roster and manage my team throughout the Road to $25K Finals.
+      </label>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+</body>
+</html>

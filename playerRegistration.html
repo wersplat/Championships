@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road to $25K Player Draft Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #B6094B;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 1.5rem;
+      background: #B6094B;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #99073f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Road to $25K Player Registration</h1>
+    <form id="regForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="discord">Discord Handle</label>
+      <input type="text" id="discord" name="discord" placeholder="@example" required>
+
+      <label for="gamertag">Gamertag</label>
+      <input type="text" id="gamertag" name="gamertag" required>
+
+      <label for="position">Preferred Position(s)</label>
+      <input type="text" id="position" name="position" placeholder="PG, SG, SF...">
+
+      <label for="history">Past Teams or Events</label>
+      <textarea id="history" name="history" rows="3"></textarea>
+
+      <label for="social">Social Media Link (optional)</label>
+      <input type="url" id="social" name="social">
+
+      <label>
+        <input type="checkbox" name="agreement" required>
+        I agree to be locked to the team that drafts me and will not join other rosters.
+      </label>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById("name").value,
+        discord: document.getElementById("discord").value,
+        gamertag: document.getElementById("gamertag").value,
+        position: document.getElementById("position").value,
+        history: document.getElementById("history").value,
+        social: document.getElementById("social").value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbySLYhaxM58Ebam-5RjEpqU3p2rb_L_HVzcH0PxYKDshbO1el9TVbGykiogJq1VlQHafA/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => {
+        if (res.ok) {
+          alert("Registration submitted!");
+          document.getElementById("regForm").reset();
+        } else {
+          alert("Submission failed.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

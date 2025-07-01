@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road to $25K BYOT Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 2rem;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #B6094B;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 1.5rem;
+      background: #B6094B;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #99073f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Road to $25K BYOT Team Registration</h1>
+    <form action="https://yourserver.com/submit" method="POST">
+      <label for="teamname">Team Name (must include 'UPA')</label>
+      <input type="text" id="teamname" name="teamname" required>
+
+      <label for="captain">Team Captain / Owner Name</label>
+      <input type="text" id="captain" name="captain" required>
+
+      <label for="discord">Captain Discord Handle</label>
+      <input type="text" id="discord" name="discord" required>
+
+      <label for="gamertag">Captain Gamertag</label>
+      <input type="text" id="gamertag" name="gamertag" required>
+
+      <label for="platform">Platform</label>
+      <select id="platform" name="platform" required>
+        <option value="PS5">PS5</option>
+        <option value="Xbox">Xbox</option>
+        <option value="Both">Both</option>
+      </select>
+
+      <label for="keepstatus">Do you want to:</label>
+      <select id="keepstatus" name="keepstatus" required>
+        <option value="Keep Full Roster">Keep Full Roster</option>
+        <option value="Redraft (1–5 kept)">Redraft (1–5 Players Kept)</option>
+      </select>
+
+      <label for="keptplayers">List Gamertags of Kept Players (max 5)</label>
+      <textarea id="keptplayers" name="keptplayers" rows="3"></textarea>
+
+      <label for="draftslots">How many players will you draft to reach 6?</label>
+      <input type="number" id="draftslots" name="draftslots" min="0" max="5">
+
+      <label for="drafting">Will your captain draft on behalf of the team?</label>
+      <select id="drafting" name="drafting" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="logo">Team Logo URL (optional)</label>
+      <input type="url" id="logo" name="logo">
+
+      <label>
+        <input type="checkbox" name="agreement" required>
+        I confirm this team is prequalified, and understand all players are locked once the draft concludes.
+      </label>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+</body>
+</html>

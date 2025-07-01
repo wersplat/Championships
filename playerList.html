@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road to $25K Player List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0A0A0A;
+      margin: 0;
+      padding: 2rem;
+      color: #fff;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #1E2132;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(182, 9, 75, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #FF2457;
+      margin-bottom: 1rem;
+    }
+    .note {
+      text-align: center;
+      color: #ccc;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .filter-bar select {
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+    th {
+      background: #2C2F45;
+      color: #FF2457;
+    }
+    tr:nth-child(even) {
+      background: #2a2a2a;
+    }
+  </style>
+  <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Registered Player Pool</h1>
+    <div class="filter-bar">
+      <label for="position" style="margin-right: 0.5rem;">Filter by Position:</label>
+      <select id="position" onchange="filterTable()">
+        <option value="">All</option>
+        <option value="PG">Point Guard (PG)</option>
+        <option value="SG">Shooting Guard (SG)</option>
+        <option value="SF">Small Forward (SF)</option>
+        <option value="PF">Power Forward (PF)</option>
+        <option value="C">Center (C)</option>
+      </select>
+    </div>
+    <table id="playerTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Discord</th>
+          <th>Gamertag</th>
+          <th>Platform</th>
+          <th>Position</th>
+          <th>Play Style</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="6">Loading players...</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Data updates automatically from registration sheet.</p>
+    <footer>
+      Presented by Bodega Cats Gaming Club • Road to $25K Virtual Finals
+    </footer>
+  </div>
+
+  <script>
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGAl8b_BRQLabFmtkLvvaW2wgBZGQsCQjkkCdHnBvdk0OYKFvUj-gOZVahYymGQZquVDHYHxAENqfC/pub?output=csv';
+    let allPlayers = [];
+
+    function renderTable(data) {
+      const tbody = document.querySelector('#playerTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(row => {
+        const tr = document.createElement('tr');
+        row.forEach(cell => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterTable() {
+      const pos = document.getElementById('position').value;
+      if (!pos) return renderTable(allPlayers);
+      const filtered = allPlayers.filter(row => row[4] && row[4].toLowerCase().includes(pos.toLowerCase()));
+      renderTable(filtered);
+    }
+
+    Papa.parse(sheetURL, {
+      download: true,
+      header: false,
+      complete: function(results) {
+        allPlayers = results.data.slice(1).filter(row => row.length >= 6);
+        renderTable(allPlayers);
+      }
+    });
+  </script>
+</body>
+</html>
