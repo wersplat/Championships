@@ -6,22 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-    h2 { background: #B6094B; color: #fff; padding: 10px; border-radius: 5px; }
-    form { background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h1, h2 { color: #B6094B; }
+    form { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     label { display: block; margin: 10px 0 5px; font-weight: bold; }
     input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
     button { background: #B6094B; color: #fff; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #000; }
     .checkbox-label { font-weight: normal; margin-bottom: 15px; display: flex; align-items: center; }
     .checkbox-label input { width: auto; margin-right: 10px; }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
 
   <h1>UPA Summer Championship Registration</h1>
 
-  <!-- Qualified Teams -->
-  <form>
+  <!-- Registration Type Selector -->
+  <label for="registration-type">Select Registration Type</label>
+  <select id="registration-type" onchange="showForm()">
+    <option value="">-- Select --</option>
+    <option value="qualified">Qualified Team</option>
+    <option value="draft">Draft Team Owner</option>
+    <option value="open">Open Registration Team</option>
+    <option value="player">Individual Player</option>
+  </select>
+
+  <!-- Qualified Team Form -->
+  <form id="form-qualified" class="hidden">
     <h2>Qualified Team Registration</h2>
     <label for="qualified-team">Select Your Qualified Team</label>
     <select id="qualified-team" name="qualified-team" required>
@@ -41,8 +52,8 @@
     <button type="submit">Register Qualified Team</button>
   </form>
 
-  <!-- Draft Team Owner Registration -->
-  <form>
+  <!-- Draft Team Owner Form -->
+  <form id="form-draft" class="hidden">
     <h2>Draft Team Owner Registration ($500)</h2>
     <label for="draft-name">Team Name</label>
     <input type="text" id="draft-name" name="draft-name" required>
@@ -58,8 +69,8 @@
     <button type="submit">Register Draft Team</button>
   </form>
 
-  <!-- Open Registration -->
-  <form>
+  <!-- Open Registration Form -->
+  <form id="form-open" class="hidden">
     <h2>Open Registration Team ($500)</h2>
     <label for="open-name">Team Name</label>
     <input type="text" id="open-name" name="open-name" required>
@@ -75,8 +86,8 @@
     <button type="submit">Register Open Team</button>
   </form>
 
-  <!-- Individual Player -->
-  <form>
+  <!-- Individual Player Form -->
+  <form id="form-player" class="hidden">
     <h2>Individual Player Registration (Free)</h2>
     <label for="player-name">GamerTag / PSN</label>
     <input type="text" id="player-name" name="player-name" required>
@@ -92,6 +103,16 @@
 
     <button type="submit">Register as Player</button>
   </form>
+
+  <script>
+    function showForm() {
+      const value = document.getElementById("registration-type").value;
+      document.querySelectorAll("form").forEach(f => f.classList.add("hidden"));
+      if (value) {
+        document.getElementById(`form-${value}`).classList.remove("hidden");
+      }
+    }
+  </script>
 
 </body>
 </html>
