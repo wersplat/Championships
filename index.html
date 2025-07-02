@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPA Summer Championship Championships</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UPA Summer Championship</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #B6094B;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .btn:hover {
+      background: #000;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -13,17 +30,34 @@
 
     <div class="section">
       <h2>📅 Event Overview</h2>
-      <p>The UPA Summer Championship Virtual Championships bring together 16 of the best Pro-Am teams to battle for $15,000 in a high-stakes, double elimination tournament — streamed live and powered by the community.</p>
+      <p>
+        The UPA Summer Championship Virtual Championships bring together 16-32 of the best Pro-Am teams 
+        to battle for <strong>$15,000</strong> in a high-stakes, double elimination tournament — streamed live and powered by the community.
+      </p>
     </div>
 
-    <div class="section">
+    <div class="section" id="format">
       <h2>🎮 Format</h2>
       <ul>
-        <li><strong>16 Total Teams</strong>: 8 BYOT (prequalified) + 8 Draft Teams</li>
-        <li><strong>Live Snake Draft</strong>: July 18th, streamed with full team breakdowns</li>
-        <li><strong>Double Elimination Bracket</strong>: All matches Best of 3, Finals Best of 5</li>
-        <li><strong>Fully Virtual</strong>: PS5 & Xbox Cross-Gen Supported</li>
-        <li><strong>Streamed Matches</strong>: Select games cast live</li>
+        <li><strong>Team Limit:</strong> 32 Max Teams</li>
+        <li><strong>Team Types:</strong> 
+          <ul>
+            <li>8 Prequalified Teams from Road to $25K Seasons</li>
+            <li>8–24 Draft or Open Registration Teams</li>
+          </ul>
+        </li>
+        <li><strong>Live Snake Draft:</strong> July 18th (streamed with full team breakdowns)</li>
+        <li><strong>Roster Size:</strong> 6 players per team (minimum)</li>
+        <li><strong>Emergency Subs:</strong> Pulled from the undrafted player pool</li>
+        <li><strong>Format Type:</strong> Double Elimination Bracket</li>
+        <li><strong>Match Length:</strong> 
+          <ul>
+            <li>All Matches: Best of 3</li>
+            <li>Grand Finals: Best of 5</li>
+          </ul>
+        </li>
+        <li><strong>Platform:</strong> PS5 & Xbox Cross-Gen Supported</li>
+        <li><strong>Streaming:</strong> Featured matches cast live throughout the tournament</li>
       </ul>
     </div>
 
@@ -40,7 +74,7 @@
     <div class="section">
       <h2>📌 Key Dates</h2>
       <ul>
-        <li>📥 BYOT + Draft Captain Registration: Open Now</li>
+        <li>📥 Prequalified & Draft Captain Registration: Open Now</li>
         <li>📝 Player Draft Registration Closes: July 17th</li>
         <li>📺 Live Draft Show: July 18th</li>
         <li>🏀 Tournament Dates: July 25–27</li>
@@ -51,15 +85,16 @@
     <div class="nav-container">
       <h3>Navigation</h3>
       <ul>
+        <li><a href="Information/format.html" class="btn">📖 View Full Format</a></li>
         <li><a href="DraftBoard/playerList.html" class="btn">👥 Registered Players</a></li>
-        <li><a href="Registration/newRegistration.html" class="btn">Register</a></li>
+        <li><a href="Registration/newRegistration.html" class="btn">📝 Register</a></li>
         <li><a href="Rules &amp; Agreements/draftRules.html" class="btn">📜 Draft Rules</a></li>
         <li><a href="Rules &amp; Agreements/rulesAgreement.html" class="btn">✅ Player Agreements</a></li>
       </ul>
     </div>
 
     <footer>
-      Presented by Bodega Cats Gaming Club • UPA Summer Championship Series 2025
+      <p>Presented by Bodega Cats Gaming Club • UPA Summer Championship Series 2025</p>
     </footer>
   </div>
 </body>
