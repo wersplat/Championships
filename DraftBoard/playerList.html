@@ -6,71 +6,78 @@
   <title>UPA Summer Championship Player List</title>
   <link rel="stylesheet" href="../styles/main.css">
   <style>
-    .container {
-      max-width: 1000px;
+    html {
+      scroll-behavior: smooth;
     }
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-    .filter-bar select, .filter-bar input {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      border: 1px solid #444;
-      background-color: #1E2132;
+    .btn {
+      padding: 10px 20px;
+      background: #B6094B;
       color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .btn:hover {
+      background: #000;
+    }
+    .search-container {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+    }
+    #searchInput, #positionFilter {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background-color: #2A2D3E;
+      color: white;
+      font-size: 1rem;
+    }
+    #searchInput {
+      flex: 1;
       min-width: 200px;
-    }
-    .note {
-      text-align: center;
-      color: #aaa;
-      font-style: italic;
-      margin: 1rem 0;
-    }
-    #playerTable {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-    }
-    #playerTable th, #playerTable td {
-      padding: 0.75rem;
-      text-align: left;
-      border-bottom: 1px solid #444;
-    }
-    #playerTable th {
-      background-color: #1E2132;
-      color: #FF2457;
-      font-weight: bold;
-    }
-    #playerTable tr:hover {
-      background-color: #1E2132;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin: 20px 0;
     }
     th, td {
-      padding: 0.75rem;
+      padding: 12px 15px;
       text-align: left;
       border-bottom: 1px solid #444;
     }
     th {
       background: #1E2132;
       color: #FF2457;
+      font-weight: bold;
     }
     tr:nth-child(even) {
-      background: #2a2a2a;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    tr:hover {
+      background-color: rgba(255, 36, 87, 0.1);
+    }
+    .position-PG { color: #4CAF50; }
+    .position-SG { color: #2196F3; }
+    .position-SF { color: #FFC107; }
+    .position-PF { color: #FF5722; }
+    .position-C { color: #9C27B0; }
+    @media (max-width: 768px) {
+      .search-container {
+        flex-direction: column;
+      }
+      #searchInput, #positionFilter {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🏀 Registered Players</h1>
+    <h1>🏀 UPA Summer Championship Player List</h1>
+    <p class="text-center">Browse registered players available for the draft</p>
     
     <div class="filter-bar">
       <select id="positionFilter" onchange="filterTable()" class="form-control">
@@ -99,9 +106,13 @@
     
     <p class="note">Last updated: <span id="lastUpdated">Loading...</span></p>
     
-    <div class="nav-container">
+    <div class="nav-container mt-4">
       <a href="../index.html" class="btn">← Back to Home</a>
     </div>
+    
+    <footer class="mt-4">
+      © 2025 Bodega Cats Gaming Club • UPA Summer Championship Series
+    </footer>
   </div>
 
   <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>

@@ -3,17 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🏆 Team Captain Registration</title>
+  <title>UPA Summer Championship - Team Captain Registration</title>
   <link rel="stylesheet" href="../styles/main.css">
   <style>
-    .form-container {
-      max-width: 800px;
-      margin: 2rem auto;
+    html {
+      scroll-behavior: smooth;
     }
-    .form-note {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-top: 0.25rem;
+    .btn {
+      padding: 10px 20px;
+      background: #B6094B;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .btn:hover {
+      background: #000;
+    }
+    .registration-form {
+      background: rgba(42, 45, 62, 0.5);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #FF2457;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      color: #FF6B8B;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #2A2D3E;
+      color: white;
+    }
+    .checkbox-label {
+      font-weight: normal;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    .checkbox-label input {
+      width: auto;
+      margin-right: 10px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -22,54 +67,8 @@
     <h1>🏆 Team Captain Registration</h1>
     <p>Register to become a team captain for the UPA Summer Championship Championships. Captains will draft their teams on July 18th.</p>
     <div class="form-container">
-      <form id="captainForm">
-        <div class="section">
-          <h2>Personal Information</h2>
-          <div class="form-group">
-            <label for="name">Captain Name</label>
-            <input type="text" id="name" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="gamertag">Gamertag</label>
-            <input type="text" id="gamertag" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="discord">Discord Username</label>
-            <input type="text" id="discord" class="form-control" required>
-            <p class="form-note">Example: username#1234</p>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" class="form-control" required>
-          </div>
-        </div>
-        <div class="section">
-          <h2>Team Information</h2>
-          <div class="form-group">
-            <label for="teamname">Preferred Team Name</label>
-            <input type="text" id="teamname" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="logo">Team Logo URL (optional)</label>
-            <input type="url" id="logo" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="playstatus">Will you be playing or just managing?</label>
-            <select id="playstatus" class="form-control" required>
-              <option value="Playing Captain">Playing Captain</option>
-              <option value="Non-Playing Manager">Non-Playing Manager</option>
-            </select>
-          </div>
-        </div>
-        <div class="section">
-          <h2>Draft Information</h2>
-          <div class="form-group">
-            <label for="availability">Are you available for the live draft on July 18th?</label>
-            <select id="availability" class="form-control" required>
-              <option value="Yes">Yes, I will attend the live draft</option>
-              <option value="No">No, I need to pre-rank players</option>
-            </select>
-          </div>
+      <form id="captainForm" class="registration-form">
+        <h2>Personal Information</h2>
           <div class="form-group">
             <label for="social">Social Media (optional)</label>
             <input type="url" id="social" class="form-control" placeholder="https://twitter.com/yourhandle">
