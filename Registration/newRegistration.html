@@ -2,108 +2,197 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UPA Summer Championship Registration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPA Summer Championship Registration</title>
   <link rel="stylesheet" href="../styles/main.css">
   <style>
-    body { font-family: Arial, sans-serif; background: #1E2132; padding: 20px; }
-    h1, h2 { color: #FF2457; }
-    form { background: #1E2132; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    label { display: block; margin: 10px 0 5px; font-weight: bold; }
-    input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
-    button { background: #FF2457; color: #ffffff; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #FF6B8B; }
-    .checkbox-label { font-weight: normal; margin-bottom: 15px; display: flex; align-items: center; }
-    .checkbox-label input { width: auto; margin-right: 10px; }
+    html {
+      scroll-behavior: smooth;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #B6094B;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px 0;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #000;
+    }
+    .registration-section {
+      background: rgba(42, 45, 62, 0.5);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #FF2457;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      color: #FF6B8B;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      background-color: #2A2D3E;
+      color: white;
+    }
+    .checkbox-label {
+      font-weight: normal;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .checkbox-label input {
+      width: auto;
+      margin-right: 10px;
+    }
     .hidden { display: none; }
+    #registration-type {
+      width: 100%;
+      padding: 10px;
+      margin: 1rem 0;
+      border-radius: 4px;
+      background-color: #2A2D3E;
+      color: white;
+      border: 1px solid #444;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>🏆 UPA Summer Championship Registration</h1>
+    <p class="text-center">Choose your registration type below to get started</p>
 
-  <h1>UPA Summer Championship Registration</h1>
-
-  <!-- Registration Type Selector -->
-  <label for="registration-type">Select Registration Type</label>
-  <select id="registration-type" onchange="showForm()">
-    <option value="">-- Select --</option>
-    <option value="qualified">Qualified Team</option>
-    <option value="draft">Draft Team Owner</option>
-    <option value="open">Open Registration Team</option>
-    <option value="player">Individual Player</option>
-  </select>
-
-  <!-- Qualified Team Form -->
-  <form id="form-qualified" class="hidden">
-    <h2>Qualified Team Registration</h2>
-    <label for="qualified-team">Select Your Qualified Team</label>
-    <select id="qualified-team" name="qualified-team" required>
-      <option value="">-- Choose Team --</option>
-      <option value="bodega-cats">Bodega Cats</option>
-      <option value="on-site">On Site</option>
-      <option value="liquid">Liquid</option>
-      <option value="zero-tolerance">Zero Tolerance</option>
-      <option value="high-octane">High Octane</option>
-      <option value="lights-out">Lights Out</option>
-      <option value="coatesville">Coatesville</option>
-      <option value="before-the-fame">Before The Fame</option>
-      <option value="hitlist">Hitlist</option>
-      <option value="achieve-greatness">Achieve Greatness</option>
-      <option value="nobody-plays-harder">Nobody Plays Harder</option>
+    <!-- Registration Type Selector -->
+    <select id="registration-type" class="form-control" onchange="showForm()">
+      <option value="">-- Select Registration Type --</option>
+      <option value="qualified">Qualified Team</option>
+      <option value="draft">Draft Team Owner</option>
+      <option value="open">Open Registration Team</option>
+      <option value="player">Individual Player</option>
     </select>
-    <button type="submit">Register Qualified Team</button>
-  </form>
 
-  <!-- Draft Team Owner Form -->
-  <form id="form-draft" class="hidden">
-    <h2>Draft Team Owner Registration ($500)</h2>
-    <label for="draft-name">Team Name</label>
-    <input type="text" id="draft-name" name="draft-name" required>
+    <!-- Qualified Team Form -->
+    <form id="form-qualified" class="hidden registration-section">
+      <h2>Qualified Team Registration</h2>
+      <div class="form-group">
+        <label for="qualified-team">Select Your Qualified Team</label>
+        <select id="qualified-team" name="qualified-team" class="form-control" required>
+          <option value="">-- Choose Team --</option>
+          <option value="bodega-cats">Bodega Cats</option>
+          <option value="on-site">On Site</option>
+          <option value="liquid">Liquid</option>
+          <option value="zero-tolerance">Zero Tolerance</option>
+          <option value="high-octane">High Octane</option>
+          <option value="lights-out">Lights Out</option>
+          <option value="coatesville">Coatesville</option>
+          <option value="before-the-fame">Before The Fame</option>
+          <option value="hitlist">Hitlist</option>
+          <option value="achieve-greatness">Achieve Greatness</option>
+          <option value="nobody-plays-harder">Nobody Plays Harder</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Register Qualified Team</button>
+    </form>
 
-    <label for="draft-captain">Team Owner or Representative (Discord)</label>
-    <input type="text" id="draft-captain" name="draft-captain" required>
+    <!-- Draft Team Owner Form -->
+    <form id="form-draft" class="hidden registration-section">
+      <h2>Draft Team Owner Registration ($500)</h2>
+      <div class="form-group">
+        <label for="draft-name">Team Name</label>
+        <input type="text" id="draft-name" name="draft-name" class="form-control" required>
+      </div>
 
-    <label class="checkbox-label">
-      <input type="checkbox" id="draft-availability" name="draft-availability" required>
-      I confirm that the team owner or representative will be available for the Live Draft on <strong>July 18th</strong>
-    </label>
+      <div class="form-group">
+        <label for="draft-captain">Team Owner or Representative (Discord)</label>
+        <input type="text" id="draft-captain" name="draft-captain" class="form-control" required>
+      </div>
 
-    <button type="submit">Register Draft Team</button>
-  </form>
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="draft-availability" name="draft-availability" required>
+          I confirm that the team owner or representative will be available for the Live Draft on <strong>July 18th</strong>
+        </label>
+      </div>
 
-  <!-- Open Registration Form -->
-  <form id="form-open" class="hidden">
-    <h2>Open Registration Team ($500)</h2>
-    <label for="open-name">Team Name</label>
-    <input type="text" id="open-name" name="open-name" required>
+      <button type="submit" class="btn">Register Draft Team</button>
+    </form>
 
-    <label for="open-captain">Team Captain Discord</label>
-    <input type="text" id="open-captain" name="open-captain" required>
+    <!-- Open Registration Form -->
+    <form id="form-open" class="hidden registration-section">
+      <h2>Open Registration Team ($500)</h2>
+      <div class="form-group">
+        <label for="open-name">Team Name</label>
+        <input type="text" id="open-name" name="open-name" class="form-control" required>
+      </div>
 
-    <p><strong>Entry Fee:</strong> $500 (Flat rate)</p>
+      <div class="form-group">
+        <label for="open-captain">Team Captain Discord</label>
+        <input type="text" id="open-captain" name="open-captain" class="form-control" required>
+      </div>
 
-    <label for="open-roster">Roster (optional)</label>
-    <textarea id="open-roster" name="open-roster" placeholder="List players..."></textarea>
+      <p><strong>Entry Fee:</strong> $500 (Flat rate)</p>
 
-    <button type="submit">Register Open Team</button>
-  </form>
+      <div class="form-group">
+        <label for="open-roster">Roster (optional)</label>
+        <textarea id="open-roster" name="open-roster" class="form-control" placeholder="List players..."></textarea>
+      </div>
 
-  <!-- Individual Player Form -->
-  <form id="form-player" class="hidden">
-    <h2>Individual Player Registration (Free)</h2>
-    <label for="player-name">GamerTag / PSN</label>
-    <input type="text" id="player-name" name="player-name" required>
+      <button type="submit" class="btn">Register Open Team</button>
+    </form>
 
-    <label for="player-discord">Discord Handle</label>
-    <input type="text" id="player-discord" name="player-discord" required>
+    <!-- Individual Player Form -->
+    <form id="form-player" class="hidden registration-section">
+      <h2>Individual Player Registration (Free)</h2>
+      <div class="form-group">
+        <label for="player-name">GamerTag / PSN</label>
+        <input type="text" id="player-name" name="player-name" class="form-control" required>
+      </div>
 
-    <label for="player-position">Primary Position</label>
-    <input type="text" id="player-position" name="player-position" required>
+      <div class="form-group">
+        <label for="player-discord">Discord Handle</label>
+        <input type="text" id="player-discord" name="player-discord" class="form-control" required>
+      </div>
 
-    <label for="player-twitter">Twitter (optional)</label>
-    <input type="text" id="player-twitter" name="player-twitter">
+      <div class="form-group">
+        <label for="player-position">Primary Position</label>
+        <input type="text" id="player-position" name="player-position" class="form-control" required>
+      </div>
 
-    <button type="submit">Register as Player</button>
-  </form>
+      <div class="form-group">
+        <label for="player-twitter">Twitter (optional)</label>
+        <input type="text" id="player-twitter" name="player-twitter" class="form-control">
+      </div>
+
+      <button type="submit" class="btn">Register as Player</button>
+    </form>
+
+    <div class="nav-container mt-4">
+      <a href="../index.html" class="btn">← Back to Home</a>
+    </div>
+  </div>
+  
+  <footer class="mt-4">
+    <p>© 2025 Bodega Cats Gaming Club • UPA Summer Championship Series</p>
+  </footer>
 
   <script>
     function showForm() {
@@ -114,11 +203,5 @@
       }
     }
   </script>
- <div class="nav-container">
-  <a href="../index.html" class="btn">← Back to Home</a>
-</div>
 </body>
-<footer>
-  © 2025 Bodega Cats Gaming Club • UPA Summer Championship Series
-</footer>
 </html>
