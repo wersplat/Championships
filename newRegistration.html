@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UPA Summer Championship Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h2 { background: #B6094B; color: #fff; padding: 10px; border-radius: 5px; }
+    form { background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    label { display: block; margin: 10px 0 5px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #B6094B; color: #fff; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #000; }
+    .checkbox-label { font-weight: normal; margin-bottom: 15px; display: flex; align-items: center; }
+    .checkbox-label input { width: auto; margin-right: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>UPA Summer Championship Registration</h1>
+
+  <!-- Qualified Teams -->
+  <form>
+    <h2>Qualified Team Registration</h2>
+    <label for="qualified-team">Select Your Qualified Team</label>
+    <select id="qualified-team" name="qualified-team" required>
+      <option value="">-- Choose Team --</option>
+      <option value="bodega-cats">Bodega Cats</option>
+      <option value="on-site">On Site</option>
+      <option value="liquid">Liquid</option>
+      <option value="zero-tolerance">Zero Tolerance</option>
+      <option value="high-octane">High Octane</option>
+      <option value="lights-out">Lights Out</option>
+      <option value="coatesville">Coatesville</option>
+      <option value="before-the-fame">Before The Fame</option>
+      <option value="hitlist">Hitlist</option>
+      <option value="achieve-greatness">Achieve Greatness</option>
+      <option value="nobody-plays-harder">Nobody Plays Harder</option>
+    </select>
+    <button type="submit">Register Qualified Team</button>
+  </form>
+
+  <!-- Draft Team Owner Registration -->
+  <form>
+    <h2>Draft Team Owner Registration ($500)</h2>
+    <label for="draft-name">Team Name</label>
+    <input type="text" id="draft-name" name="draft-name" required>
+
+    <label for="draft-captain">Team Owner or Representative (Discord)</label>
+    <input type="text" id="draft-captain" name="draft-captain" required>
+
+    <label class="checkbox-label">
+      <input type="checkbox" id="draft-availability" name="draft-availability" required>
+      I confirm that the team owner or representative will be available for the Live Draft on <strong>July 18th</strong>
+    </label>
+
+    <button type="submit">Register Draft Team</button>
+  </form>
+
+  <!-- Open Registration -->
+  <form>
+    <h2>Open Registration Team ($500)</h2>
+    <label for="open-name">Team Name</label>
+    <input type="text" id="open-name" name="open-name" required>
+
+    <label for="open-captain">Team Captain Discord</label>
+    <input type="text" id="open-captain" name="open-captain" required>
+
+    <p><strong>Entry Fee:</strong> $500 (Flat rate)</p>
+
+    <label for="open-roster">Roster (optional)</label>
+    <textarea id="open-roster" name="open-roster" placeholder="List players..."></textarea>
+
+    <button type="submit">Register Open Team</button>
+  </form>
+
+  <!-- Individual Player -->
+  <form>
+    <h2>Individual Player Registration (Free)</h2>
+    <label for="player-name">GamerTag / PSN</label>
+    <input type="text" id="player-name" name="player-name" required>
+
+    <label for="player-discord">Discord Handle</label>
+    <input type="text" id="player-discord" name="player-discord" required>
+
+    <label for="player-position">Primary Position</label>
+    <input type="text" id="player-position" name="player-position" required>
+
+    <label for="player-twitter">Twitter (optional)</label>
+    <input type="text" id="player-twitter" name="player-twitter">
+
+    <button type="submit">Register as Player</button>
+  </form>
+
+</body>
+</html>
